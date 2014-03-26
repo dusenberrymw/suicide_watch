@@ -1,11 +1,18 @@
 Suicide Watch
-===========
+=============
 
-Twitter mining for suicide prevention, gun violence, influenza, and other public health threats. Wordlist obtained from Argyle et al. "Tracking Suicide Risk Factors
-Through Twitter in the US." Crisis 2014; Vol. 35(1):51–59. 
+**FORKED FROM th3o6a1d (github.com/th3o6a1d/suicide_watch)**
 
-Opens twitter public stream.  Identifies concerning tweets in a geographical location, such as a school district.  Once it flags a tweet, will scan that user's past tweets, tally up instances of the word, record the number of followers, reverse geocode the user's address using the Google Maps API, dump the output into a sqlite3 db and .txt file, then send a text message to a user.  
+Twitter mining for suicide prevention, gun violence, influenza, and other public
+ health threats. Wordlist obtained from Argyle et al. "Tracking Suicide Risk
+ Factors Through Twitter in the US." Crisis 2014; Vol. 35(1):51–59.
 
-Uses TwitterAPI for Python (thanks geduldig).  To install, pip install TwitterAPI.  
+Opens twitter public stream. Identifies concerning tweets by sets of keywords.
+ Once it flags a tweet, it will get the location listed by the user and also
+ attempt to reverse geocode the user's address using the Google Maps API.  It
+ will then filter the tweet based on the locations given.  For filtered tweets,
+ it will then scan that user's past tweets, tally up instances of the sets of
+ keywords, record the number of followers, and dump the output in txt and json
+ formats.
 
-http://www.twitter.com/th3o6a1d
+Uses TwitterAPI for Python.  To install, pip install TwitterAPI.  
